@@ -1,6 +1,7 @@
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
+import demoJpg from "../assets/demo.jpg"
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -31,28 +32,28 @@ const Projects = () => {
       id: 1,
       title: "Demo app",
       Description: "yet to be implemented asdlkfjalsdkjflaskdjflaskdjflaskdjfalsdkjflsadkjfalskd",
-      imgUrl: "/src/assets/demo.jpg",
+      imgUrl: demoJpg,
       link: "https://github.com/abrarfaisal87?tab=repositories",
     },
     {
       id: 2,
       title: "Demo app",
       Description: "Yet to be implemented",
-      imgUrl: "/src/assets/demo.jpg",
+      imgUrl: demoJpg,
       link: "https://github.com/abrarfaisal87?tab=repositories",
     },
     {
       id: 3,
       title: "Demo app",
       Description: "Yet to be implemented",
-      imgUrl: "/src/assets/demo.jpg",
+      imgUrl: demoJpg,
       link: "https://github.com/abrarfaisal87?tab=repositories",
     },
     {
       id: 4,
       title: "Demo app",
       Description: "Yet to be implemented",
-      imgUrl: "/src/assets/demo.jpg",
+      imgUrl: demoJpg,
       link: "https://github.com/abrarfaisal87?tab=repositories",
     },
   ];
