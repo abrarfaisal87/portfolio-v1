@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    font-family: "Poppins","Roboto",'Open Sans','Helvetica Neue', sans-serif;
+    background-color: #22223b;
+    color: white;
+    background-image: url('/src/assets/6.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.hero-logo{
+    animation: updown 3s linear infinite;
+}
+@keyframes updown {
+    0%{
+        transform: translateY(-20px);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(-20px);
+    }
+}
