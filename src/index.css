@@ -12,6 +12,9 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+html{
+    scroll-behavior: smooth;
+}
 .hero-logo{
     animation: updown 3s linear infinite;
 }

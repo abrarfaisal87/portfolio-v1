@@ -57,6 +57,7 @@ const Hero = () => {
 
     return () => ctx.revert();
   },[]);
+  
   const tick = () => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];

@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <main className="mx-auto max-w-7xl overflow-x-hidden antialiased">
-       <div className="relative z-10">
+       <div className="relative z-10 scroll-smooth">
         <Navbar/>
         <Hero/>
         <Skills/>
