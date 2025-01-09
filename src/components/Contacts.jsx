@@ -1,28 +1,10 @@
 import { RiFacebookBoxFill, RiGithubFill, RiLinkedinBoxFill } from "@remixicon/react";
-import React, { useRef,useEffect } from "react";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-import gsap from "gsap";
+import React, { useRef } from "react";
 
-gsap.registerPlugin(ScrollTrigger)
 
 const Contacts = () => {
   const contactRef = useRef(null);
-  useEffect(()=>{
-    const ctx =  gsap.context(()=>{
-      gsap.from(".contact-icon",{
-        opacity:0,
-        y:30,
-        duration:1,
-        ease:"power3.out",
-        ScrollTrigger:{
-          trigger:contactRef.current,
-          start:"top 80%",
-          toggleActions:"play none none none",
-        }
-      })
-    },contactRef)
-    return ()=> ctx.revert();
-  },[])
+
 
   return (
     <section className="py-16" id="contact" ref={contactRef}>

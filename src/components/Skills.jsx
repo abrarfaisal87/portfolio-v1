@@ -10,7 +10,9 @@ import React, { useRef,useEffect } from "react";
 import { BiLogoPostgresql } from "react-icons/bi";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import gsap from "gsap";
+
 gsap.registerPlugin(ScrollTrigger)
+
 const Skills = () => {
   const SKILLS = [
     {
@@ -46,7 +48,9 @@ const Skills = () => {
       icon: <BiLogoPostgresql className="text-blue-300" />,
     },
   ];
+
   const skillsref = useRef(null);
+
   useEffect(()=>{
     const ctx =  gsap.context(()=>{
       gsap.from(".skill-item",{
@@ -55,7 +59,7 @@ const Skills = () => {
         duration:1,
         ease:"power3.out",
         stagger:0.2,
-        ScrollTrigger:{
+        scrollTrigger:{
           trigger:skillsref.current,
           start:"top 80%",
           toggleActions:"play none none none",
@@ -64,6 +68,7 @@ const Skills = () => {
     },skillsref)
     return ()=> ctx.revert();
   },[])
+  
   return (
     <section className="py-10" id="skills" ref={skillsref}>
       <div className="px-4">
