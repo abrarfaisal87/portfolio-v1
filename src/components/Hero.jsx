@@ -44,15 +44,15 @@ const Hero = () => {
           },
           "-=0.4"
         )
-        .from(
-          ".hero-btn",
-          {
-            opacity: 0,
-            scale: 0.9,
-            duration: 0.7,
-          },
-          "-=0.3"
-        );
+        // .from(
+        //   ".hero-btn",
+        //   {
+        //     opacity: 0,
+        //     scale: 0.9,
+        //     duration: 0.7,
+        //   },
+        //   "-=0.3"
+        // );
     }, heroRef);
 
     return () => ctx.revert();
