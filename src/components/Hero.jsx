@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import headerImg from "../assets/headerImg.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleleting, setIsDeleting] = useState(false);
@@ -33,31 +33,30 @@ const Hero = () => {
         scale: 0.95,
         duration: 0.8,
         stagger: 0.15,
-      })
-        .from(
-          ".hero-text",
-          {
-            opacity: 0,
-            y: 50,
-            scale: 0.95,
-            duration: 0.8,
-          },
-          "-=0.4"
-        )
-        // .from(
-        //   ".hero-btn",
-        //   {
-        //     opacity: 0,
-        //     scale: 0.9,
-        //     duration: 0.7,
-        //   },
-        //   "-=0.3"
-        // );
+      }).from(
+        ".hero-text",
+        {
+          opacity: 0,
+          y: 50,
+          scale: 0.95,
+          duration: 0.8,
+        },
+        "-=0.4"
+      );
+      // .from(
+      //   ".hero-btn",
+      //   {
+      //     opacity: 0,
+      //     scale: 0.9,
+      //     duration: 0.7,
+      //   },
+      //   "-=0.3"
+      // );
     }, heroRef);
 
     return () => ctx.revert();
-  },[]);
-  
+  }, []);
+
   const tick = () => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
@@ -103,11 +102,10 @@ const Hero = () => {
               design
             </p>
             <a
-              href="/abrarfaisal.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              download="abrarfaisal.pdf"
-              className="hero-btn mb-6 flex gap-1 w-fit rounded-full border hover:bg-slate-900 transition-all border-pink-200/50 px-3 py-2 tracking-tighter"
+              href="https://drive.google.com/uc?export=download&id=1TJUSH5k2v82IJowHSxgvT3uBIC2xlS9E"
+              className="hero-btn mb-6 flex gap-1 w-fit rounded-full 
+              border hover:bg-slate-900 transition-all
+               border-pink-200/50 px-3 py-2 tracking-tighter"
             >
               <span>Download Resume</span>
               <RiArrowRightUpLine />
