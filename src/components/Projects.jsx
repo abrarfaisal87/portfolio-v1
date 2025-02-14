@@ -2,6 +2,8 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import demoJpg from "../assets/demo.jpg"
+import buzz from "../assets/buzz.png"
+import recipefinder from "../assets/recipefinder.png"
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -30,29 +32,29 @@ const Projects = () => {
   const PROJECTS = [
     {
       id: 1,
-      title: "Demo app",
-      Description: "yet to be implemented asdlkfjalsdkjflaskdjflaskdjflaskdjfalsdkjflsadkjfalskd",
-      imgUrl: demoJpg,
-      link: "https://github.com/abrarfaisal87?tab=repositories",
+      title: "Buzz",
+      Description: "A full stack chat app with socket.io implementation",
+      imgUrl: buzz,
+      link: "https://buzz-3ywi.onrender.com",
     },
     {
       id: 2,
-      title: "Demo app",
-      Description: "Yet to be implemented",
-      imgUrl: demoJpg,
-      link: "https://github.com/abrarfaisal87?tab=repositories",
+      title: "Recipe-Finder",
+      Description: "A full stack recipe finding app where you can search recipes, store favorites",
+      imgUrl: recipefinder,
+      link: "http://recipe-finder-qp9s.vercel.app",
     },
     {
       id: 3,
       title: "Demo app",
-      Description: "Yet to be implemented",
+      Description: "Under construction",
       imgUrl: demoJpg,
       link: "https://github.com/abrarfaisal87?tab=repositories",
     },
     {
       id: 4,
       title: "Demo app",
-      Description: "Yet to be implemented",
+      Description: "Under construction",
       imgUrl: demoJpg,
       link: "https://github.com/abrarfaisal87?tab=repositories",
     },
