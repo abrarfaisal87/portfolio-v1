@@ -10,7 +10,7 @@ const Hero = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [text, setText] = useState("");
   const period = 2000;
-  const toRotate = ["Abrar Faisal", "a Frontend Dev", "a Backend Dev"];
+  const toRotate = ["Abrar Faisal", "Tech Support", "Software Dev"];
   const heroRef = useRef(null);
 
   useEffect(() => {
@@ -93,7 +93,7 @@ const Hero = () => {
               Welcome to my PortFolio
             </span>
             <h1 className="text-6xl mt-9">
-              {`Hi I'm `}
+              {`Hi, I'm `}
               <span>{text}</span>
             </h1>
             <p className="hero-text max-w-2xl  text-xl tracking-tighter lg:text-2xl ">

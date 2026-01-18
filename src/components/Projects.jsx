@@ -65,7 +65,11 @@ const Projects = () => {
         <h2 className="mb-8 text-center text-3xl font-medium lg:text-4xl">
           Projects
         </h2>
-        <div className="flex flex-wrap justify-center">
+
+        <div className="items-center justify-center text-center">
+          <h1>Dont want to talk about it</h1>
+        </div>
+        {/* <div className="flex flex-wrap justify-center">
           {PROJECTS.map((project) => (
             <div
               key={project.id}
@@ -94,7 +98,7 @@ const Projects = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
