@@ -1,93 +1,83 @@
 import {
-  RiCss3Line,
-  RiHtml5Line,
-  RiJavascriptLine,
-  RiNodejsLine,
-  RiReactjsLine,
-  RiTailwindCssLine,
+  RiCustomerService2Line, RiMegaphoneLine, RiToolsLine, RiBugLine,
+  RiBookOpenLine, RiUserHeartLine, RiShakeHandsLine, RiMailSendLine,
+  RiSearchLine, RiGroupLine, RiChatSmile3Line, RiLineChartLine,
+  RiSettings3Line, RiChat3Line, RiCodeSSlashLine,
 } from "@remixicon/react";
-import React, { useRef,useEffect } from "react";
-import { BiLogoPostgresql } from "react-icons/bi";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-import gsap from "gsap";
+import {
+  SiPython, SiReact, SiPostgresql, SiSupabase,
+  SiTailwindcss, SiGit, SiNotion, SiJavascript, SiNodedotjs, SiWordpress,
+} from "react-icons/si";
+import SectionHeading from "./SectionHeading";
 
-gsap.registerPlugin(ScrollTrigger)
+const groups = [
+  {
+    name: "Marketing & partnerships",
+    icon: RiMegaphoneLine,
+    description: "Building relationships and helping products reach the right people.",
+    skills: [
+      { name: "Partnerships", icon: RiShakeHandsLine },
+      { name: "Outreach", icon: RiMailSendLine },
+      { name: "Influencer marketing", icon: RiUserHeartLine },
+      { name: "Community", icon: RiGroupLine },
+      { name: "SEO & content", icon: RiSearchLine },
+      { name: "Social media", icon: RiChatSmile3Line },
+      { name: "Email prospecting", icon: RiMailSendLine },
+      { name: "Competitor analysis", icon: RiLineChartLine },
+    ],
+  },
+  {
+    name: "Technical support & IT",
+    icon: RiCustomerService2Line,
+    description: "Solving issues, supporting customers, and keeping teams connected.",
+    skills: [
+      { name: "Troubleshooting", icon: RiToolsLine },
+      { name: "WordPress", icon: SiWordpress },
+      { name: "QA & bug triage", icon: RiBugLine },
+      { name: "IT operations", icon: RiSettings3Line },
+      { name: "Documentation", icon: RiBookOpenLine },
+      { name: "Zoho Desk & Tawk.to", icon: RiChat3Line },
+      { name: "Remote support", icon: RiCustomerService2Line },
+      { name: "Notion", icon: SiNotion },
+    ],
+  },
+  {
+    name: "Development & tools",
+    icon: RiCodeSSlashLine,
+    description: "The technical foundation behind how I understand software.",
+    skills: [
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Python", icon: SiPython },
+      { name: "React", icon: SiReact },
+      { name: "HTML, CSS & Tailwind", icon: SiTailwindcss },
+      { name: "Node.js & Express", icon: SiNodedotjs },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "Supabase", icon: SiSupabase },
+      { name: "Git & Postman", icon: SiGit },
+    ],
+  },
+];
 
-const Skills = () => {
-  const SKILLS = [
-    {
-      name: "HTML5",
-      icon: <RiHtml5Line className="text-orange-600 hover:text-orange-300" />,
-    },
-    {
-      name: "CSS3",
-      icon: <RiCss3Line className="text-blue-500 hover:text-blue-300" />,
-    },
-    {
-      name: "Tailwind",
-      icon: <RiTailwindCssLine className="text-teal-600 hover:text-teal-400" />,
-    },
-    {
-      name: "Javascript",
-      icon: <RiJavascriptLine className="text-yellow-300 hover:text-yellow-500" />,
-    },
-    {
-      name: "React",
-      icon: <RiReactjsLine className="text-blue-400 hover:text-blue-600" />,
-    },
-    {
-      name: "NodeJS",
-      icon: <RiNodejsLine className="text-green-500 hover:text-green-300" />,
-    },
-    {
-      name: "ExpressJs",
-      icon: <RiJavascriptLine className="text-gray-400 hover:bg-gray-200" />,
-    },
-    {
-      name: "Postgresql",
-      icon: <BiLogoPostgresql className="text-blue-300 hover:text-blue-500" />,
-    },
-  ];
-
-  const skillsref = useRef(null);
-
-  useEffect(()=>{
-    const ctx =  gsap.context(()=>{
-      gsap.from(".skill-item",{
-        opacity:0,
-        y:50,
-        duration:1,
-        ease:"power3.out",
-        stagger:0.2,
-        scrollTrigger:{
-          trigger:skillsref.current,
-          start:"top 80%",
-          toggleActions:"play none none none",
-        }
-      })
-    },skillsref)
-    return ()=> ctx.revert();
-  },[])
-
+export default function Skills() {
   return (
-    <section className="py-10" id="skills" ref={skillsref}>
-      <div className="px-4">
-      <h1 className="mb-8 text-center text-3xl lg:text-4xl font-medium">
-          Skills
-        </h1>
-           <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
-           {SKILLS.map((skill, index) => (
-          <div key={index} className="skill-item flex flex-col items-center text-center">
-            <div className="mb-4 hover:">
-                {skill.icon}
-            </div>
-            <h3 className="mb-2 text-lg lg:text-xl font-medium">{skill.name}</h3>
-          </div>
+    <section className="section page-width" id="skills" aria-labelledby="skills-title">
+      <SectionHeading number="02" label="MY TOOLKIT" id="skills-title">Skills & <em>expertise.</em></SectionHeading>
+      <div className="skills-groups">
+        {groups.map(({ name, icon: GroupIcon, description, skills }) => (
+          <article className="skill-group" key={name} data-reveal>
+            <div className="skill-group-heading"><GroupIcon size={24} aria-hidden="true" /><h3>{name}</h3></div>
+            <p className="skill-group-description">{description}</p>
+            <ul className="skill-icon-grid">
+              {skills.map(({ name: skill, icon: SkillIcon }) => (
+                <li className="skill-item" key={skill}>
+                  <SkillIcon className="skill-icon" size={31} aria-hidden="true" />
+                  <span>{skill}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
         ))}
-           </div>
       </div>
     </section>
   );
-};
-
-export default Skills;
+}
